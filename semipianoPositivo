@@ -1,0 +1,24 @@
+function Point (x, y){
+  this.x = x || 0;
+	this.y = y || 0;
+}
+
+Point.prototype.getDistance = function(p2) {
+		var primoMembro = Math.pow((p2.x - this.x),2);
+		var secondoMembro = Math.pow((p2.y - this.y),2);
+		var result = Math.sqrt (primoMembro + secondoMembro);
+		return result;
+};
+
+Point.prototype.translate = function(dx, dy) {
+		this.x = x + dx;
+		this.y = y + dy;   //oppure this.x +=dx;
+
+		return this; //utile per applicare le funzioni in cascata
+};
+
+var semipianoPositivo = function(array) {
+ 	return array.filter(function (item){
+ 			return (item.y > item.x);
+ 		}); 
+}
